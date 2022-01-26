@@ -20,7 +20,7 @@ class InferenceConfig(Config):
     # one image at a time. Batch size = GPU_COUNT * IMAGES_PER_GPU
     GPU_COUNT = 1
     IMAGES_PER_GPU = 1
-    NUM_CLASSES = 34
+    NUM_CLASSES = 37
     NAME = 'coco'
 
 def get_mask_contours(mask):
