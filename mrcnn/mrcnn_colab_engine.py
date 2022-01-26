@@ -6,7 +6,7 @@ from skimage.measure import find_contours
 
 
 # Root directory of the project
-ROOT_DIR = os.path.abspath("/content/calculate_object_area_exercise")
+ROOT_DIR = os.path.abspath("/content/rayos")
 sys.path.append(ROOT_DIR)
 from mrcnn.config import Config
 import mrcnn.model as modellib
