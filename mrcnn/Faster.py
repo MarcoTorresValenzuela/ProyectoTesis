@@ -3,6 +3,7 @@ import glob
 import xml.etree.ElementTree as ET
 import pandas as pd
 import numpy as np
+import tensorflow as tf
 
 def load_image_to_numpy(image):
     (im_width, im_height) = image.size
