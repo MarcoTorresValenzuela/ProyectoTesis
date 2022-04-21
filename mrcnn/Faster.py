@@ -3,19 +3,11 @@ import glob
 import xml.etree.ElementTree as ET
 import pandas as pd
 
-# clone the tensorflow models on the colab cloud vm
-!git clone --q https://github.com/tensorflow/models.git
 
-#navigate to /models/research folder to compile protos
-%cd models/research
-
-# Compile protos.
-!protoc object_detection/protos/*.proto --python_out=.
-
-# Install TensorFlow Object Detection API.
-!cp object_detection/packages/tf1/setup.py .  
-!python -m pip install .
-
+def load_image_to_numpy(image):
+    (im_width, im_height) = image.size
+    return np.array(image.getdata()).reshape(
+        (im_height, im_width, 3)).astype(np.uint8)
 
 # Inference pipeline
 def run_inference(image, graph):
