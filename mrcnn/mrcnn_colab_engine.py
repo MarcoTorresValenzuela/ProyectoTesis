@@ -6,7 +6,7 @@ from skimage.measure import find_contours
 
 
 # Root directory of the project
-ROOT_DIR = os.path.abspath("/content/rayos")
+ROOT_DIR = os.path.abspath("/content/ProyectoTesis")
 sys.path.append(ROOT_DIR)
 from mrcnn.config import Config
 import mrcnn.model as modellib
