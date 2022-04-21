@@ -2,7 +2,7 @@ import os
 import glob
 import xml.etree.ElementTree as ET
 import pandas as pd
-
+import numpy as np
 
 def load_image_to_numpy(image):
     (im_width, im_height) = image.size
