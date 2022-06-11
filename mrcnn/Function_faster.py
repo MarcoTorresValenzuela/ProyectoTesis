@@ -19,8 +19,6 @@ from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 
-%matplotlib inline
-
 def load_image_to_numpy(image):
     (im_width, im_height) = image.size
     return np.array(image.getdata()).reshape(
@@ -144,4 +142,4 @@ def deteccion_imagen(image_path,PATH_TO_CKPT):
   print("Tiempo de deteccion",(final-inicio),"segundos")
   print("Tiempo de visualizacion",(final1-inicio1)*1000,"milisegundos")
   
-  return plt.imshow(image_np)
+  return image_np
