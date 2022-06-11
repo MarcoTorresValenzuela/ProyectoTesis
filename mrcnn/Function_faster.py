@@ -1,3 +1,4 @@
+import tensorflow as tf
 def deteccion_imagen(image_path,PATH_TO_CKPT):
   # Valores de la red neuronal propia
   num_classes = 1 # numero de clases de la red
