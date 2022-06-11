@@ -18,6 +18,7 @@ from PIL import Image
 from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
+%matplotlib inline
 
 def load_image_to_numpy(image):
     (im_width, im_height) = image.size
