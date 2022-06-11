@@ -142,4 +142,4 @@ def deteccion_imagen(image_path,PATH_TO_CKPT):
   print("Tiempo de deteccion",(final-inicio),"segundos")
   print("Tiempo de visualizacion",(final1-inicio1)*1000,"milisegundos")
   
-  return
+  return plt.imshow(image_np)
