@@ -135,12 +135,13 @@ def deteccion_imagen(image_path,PATH_TO_CKPT):
       use_normalized_coordinates=True,
       line_thickness=4,
       min_score_thresh=0.7)
+  final1 = time.perf_counter()
+  print("Tiempo de deteccion",(final-inicio),"segundos")
+  print("Tiempo de visualizacion",(final1-inicio1)*1000,"milisegundos")
+
   plt.figure(figsize=IMAGE_SIZE, dpi=200)
   plt.axis("off")
   plt.imshow(image_np)
   plt.show()
-  final1 = time.perf_counter()
-  print("Tiempo de deteccion",(final-inicio),"segundos")
-  print("Tiempo de visualizacion",(final1-inicio1)*1000,"milisegundos")
   
   return 
