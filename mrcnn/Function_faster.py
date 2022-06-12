@@ -92,6 +92,7 @@ IMAGE_SIZE = (12, 8) # dimension de la imagen de salida
 
 # se configuracion los direcctorios de label map y inference.pb
 PATH_TO_LABELS = '/content/gdrive/MyDrive/customTF1/data/label_map.pbtxt'
+PATH_TO_CKPT = os.path.join(os.path.abspath("/content/gdrive/MyDrive/customTF1/data/inference_graph"), "frozen_inference_graph.pb")
 
 # seteo de tensorflow graph
 detection_graph = tf.Graph()
