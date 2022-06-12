@@ -81,7 +81,7 @@ def run_inference(image, graph):
     
 # Valores de la red neuronal propia
 num_classes = 1 # numero de clases de la red
-IMAGE_SIZE = (12, 8) # dimension de la imagen de salida
+IMAGE_SIZE = (6, 6) # dimension de la imagen de salida
 
 # Para lectura de todas las imagenes dentro de una carpeta
 #IMAGE_DIR = "/content/gdrive/MyDrive/customTF1/img"
