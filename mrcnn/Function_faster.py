@@ -143,3 +143,4 @@ def deteccion_imagen(image_path):
   plt.imshow(image_np)
   print("el tiempo de deteccion es",(final-inicio)*1000,"milisegundos")
   print("el tiempo de visulizacion es",(final1-inicio1)*1000,"milisegundos")
+  return plt.imshow(image_np)
