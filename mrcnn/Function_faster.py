@@ -134,3 +134,4 @@ def deteccion_imagen(image_path,PATH_TO_CKPT):
   plt.axis("off")
   plt.imshow(image_np)
   plt.show()
+return image_np
