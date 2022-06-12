@@ -140,5 +140,3 @@ def deteccion_imagen(image_path,PATH_TO_CKPT):
   plt.figure(figsize=IMAGE_SIZE, dpi=200)
   plt.axis("off")
   plt.imshow(image_np)
-    
-   return image_np
