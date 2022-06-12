@@ -78,27 +78,6 @@ def run_inference(image, graph):
                 output_dict['detection_masks'] = output_dict['detection_masks'][0]
     return output_dict
 
-
-# Visualizacion
-def visualizar(image_np):
-  inicio1 = time.perf_counter()
-  vis_util.visualize_boxes_and_labels_on_image_array(
-      image_np,
-      output_dict['detection_boxes'],
-      output_dict['detection_classes'],
-      output_dict['detection_scores'],
-      category_index,
-      instance_masks=output_dict.get('detection_masks'),
-      use_normalized_coordinates=True,
-      line_thickness=4,
-      min_score_thresh=0.7)
-  final1 = time.perf_counter()
-  plt.figure(figsize=IMAGE_SIZE, dpi=200)
-  plt.axis("off")
-  plt.imshow(image_np)
-  
-  return plt.show()
-
     
 def deteccion_imagen(image_path,PATH_TO_CKPT):
   # Valores de la red neuronal propia
@@ -145,8 +124,13 @@ def deteccion_imagen(image_path,PATH_TO_CKPT):
   inicio = time.perf_counter()
   output_dict = run_inference(image_np, detection_graph)
   final = time.perf_counter()
-
-  visualizar(image_np)
-
-  
-  return 
+ # Visualizacion
+  inicio1 = time.perf_counter()
+  vis_util.visualize_boxes_and_labels_on_image_array(image_np,output_dict['detection_boxes'],output_dict['detection_classes'],
+      output_dict['detection_scores'],category_index,instance_masks=output_dict.get('detection_masks'),
+      use_normalized_coordinates=True,line_thickness=4,min_score_thresh=0.7)
+  final1 = time.perf_counter()
+  plt.figure(figsize=IMAGE_SIZE, dpi=200)
+  plt.axis("off")
+  plt.imshow(image_np)
+  plt.show()
