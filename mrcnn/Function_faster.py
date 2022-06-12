@@ -112,4 +112,34 @@ category_index = label_map_util.create_category_index(categories)
 #se utiliza para la posterior lectura de imagenes dentro de una carpeta(todas la imagenes)
 #for image_path in IMAGE_PATHS:
 #  image = Image.open(image_path)
-    
+#solo para una imagen
+
+def deteccion_imagen(image_path):
+  # correr inferencia en la imagen seteada
+  image = Image.open(image_path)
+  # conversion en la imagen en  numpy array (pasar la imagen a matriz de numeros)
+  image_np = load_image_to_numpy(image)
+  # Expancion de las dimensiones ya que el modelo espera que las imágenes tengan forma: [1, None, None, 3]
+  image_np_expanded = np.expand_dims(image_np, axis=0)
+  # Realiza la inferencia
+  inicio = time.perf_counter()
+  output_dict = run_inference(image_np, detection_graph)
+  final = time.perf_counter()
+  # Visualizacion
+  inicio1 = time.perf_counter()
+  vis_util.visualize_boxes_and_labels_on_image_array(
+  image_np,
+  output_dict['detection_boxes'],
+  output_dict['detection_classes'],
+  output_dict['detection_scores'],
+  category_index,
+  instance_masks=output_dict.get('detection_masks'),
+  use_normalized_coordinates=True,
+  line_thickness=4,
+  min_score_thresh=0.7)
+  final1 = time.perf_counter()
+  plt.figure(figsize=IMAGE_SIZE, dpi=200)
+  plt.axis("off")
+  plt.imshow(image_np)
+  print("el tiempo de deteccion es",(final-inicio)*1000,"milisegundos")
+  print("el tiempo de visulizacion es",(final1-inicio1)*1000,"milisegundos")
