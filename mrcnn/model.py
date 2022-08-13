@@ -19,7 +19,7 @@ import numpy as np
 import tensorflow as tf
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
-import keras
+from tensorflow import keras
 import keras.backend as K
 import keras.layers as KL
 import keras.engine as KE
