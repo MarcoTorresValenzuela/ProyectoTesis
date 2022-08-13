@@ -22,7 +22,7 @@ tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 import keras
 import keras.backend as K
 import keras.layers as KL
-import keras.engine.topology as KE
+import keras.engine as KE
 import keras.models as KM
 
 from mrcnn import utils
